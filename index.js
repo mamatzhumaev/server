@@ -3,8 +3,11 @@ import mongoose from "mongoose";
 import { registerValidation, loginValidation } from "./validations.js";
 import { checkAuth, handleValidationErrors } from "./utils/index.js";
 import { UserController } from "./controllers/index.js";
+import cors from "cors";
+
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 mongoose
   .connect(
